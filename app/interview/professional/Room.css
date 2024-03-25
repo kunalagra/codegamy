@@ -1,0 +1,113 @@
+.room {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 10px 20px;
+}
+
+.roomSidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.languageFieldWrapper {
+    padding: 2px 6px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.languageField {
+    padding: 6px 10px;
+    background-color: #f0f0f0;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+}
+
+.roomCodeEditor {
+    flex: 1;
+}
+
+.roomSidebarCopyBtn {
+    font-size: 75%;
+    font-weight: bold;
+    padding: 8px 15px;
+    color: white;
+    background-color: #ffdd00;
+    border: 1px solid #ffdd00;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.45s ease-in-out 0.05s;
+}
+.roomSidebarCopyBtn:hover {
+    color: black;
+    background-color: white;
+}
+
+.roomSidebarBtn {
+    font-size: 75%;
+    font-weight: bold;
+    padding: 10px 15px;
+    background-color: white;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.45s ease-in-out 0.05s;
+}
+.roomSidebarBtn:hover {
+    color: white;
+    background-color: black;
+}
+
+.roomSidebarUsersWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.roomSidebarUsers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.roomSidebarUsersEach {
+    display: grid;
+    justify-items: center;
+}
+
+.roomSidebarUsersEachAvatar {
+    color: white;
+    border-radius: 5px;
+    min-width: 30px;
+    min-height: 30px;
+    padding: 5px;
+    font-size: small;
+
+    display: grid;
+    place-items: center;
+}
+
+.roomSidebarUsersEachName {
+    font-weight: bold;
+    font-size: small;
+}
+
+@media screen and (min-width: 991px) {
+
+    .roomSidebar {
+        flex: 0.25;
+    }
+
+    .roomSidebar > *:nth-child(2) {
+        margin-top: auto;
+    }
+
+    .roomCodeEditor {
+        flex: 0.75;
+    }
+}

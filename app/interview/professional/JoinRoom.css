@@ -1,0 +1,53 @@
+.joinBoxWrapper {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.joinBox {
+    width: 500px;
+    display: grid;
+    gap: 15px;
+    border: 2px solid rgb(237, 234, 234);
+    place-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 15px rgb(235, 234, 234);
+    background-color: white;
+}
+
+.joinBoxBtn {
+    padding: 8px 15px;
+    color: white;
+    background-color: #ffdd00;
+    border: 1px solid #ffdd00;
+    outline: none;
+    border-radius: 25px;
+    font-size: 75%;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.45s ease-in-out 0.05s;
+}
+.joinBoxBtn:hover {
+    color: black;
+    background-color: white;
+}
+
+.joinBoxInput {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    border: none;
+    outline: none;
+}
+
+.joinBoxInputWrapper {
+    width: 100%;
+    display: grid;
+    gap: 5px;
+}
+
+.joinBoxWarning {
+    height: 10px;
+    font-size: small;
+    color: red;
+}
