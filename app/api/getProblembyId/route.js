@@ -7,13 +7,9 @@ import { authOptions } from "../auth/[...nextauth]/route.js"
 export async function GET(req) {
     await dbConnect();
 
-    try {
-          const searchParams = req.nextUrl.searchParams
-          const query = searchParams.get('id')
-          const problem = await Problem.findOne({id: query})
-          return new Response(problem,{status: 200})
-      } catch (error) {
-        console.error(error);
-        return new Response(error,{status: 500}) // Handle any errors
-      }
+    const searchParams = req.nextUrl.searchParams
+    const query = searchParams.get('id')
+    const problem = await Problem.findOne({id: query})
+    return new Response(JSON.stringify(problem),{status: 200})
+
 }

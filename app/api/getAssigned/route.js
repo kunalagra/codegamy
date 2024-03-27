@@ -36,7 +36,7 @@ export async function GET() {
           return new Response(JSON.stringify(res),{status: 200})
         }
       } catch (error) {
-        console.error(error);
+        // console.error(error);
         return new Response(error,{status: 500}) // Handle any errors
       }
 }
