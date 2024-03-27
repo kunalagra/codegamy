@@ -27,13 +27,13 @@ const ContestSchema = Schema({
         required: true,
     },
     problems: [{ 
-        type: mongoose.Schema.Types.ObjectId, 
+        type: Schema.Types.ObjectId, 
         ref: 'Problem' 
     }],
     ranklist: [
         {
             user: {
-                type: mongoose.Schema.Types.ObjectId,
+                type: Schema.Types.ObjectId,
                 ref: 'UserInfo'
             },
             score: {

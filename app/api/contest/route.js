@@ -1,23 +1,25 @@
-import dbConnect from "@/utils/dbConnect";
+import dbConnect from '@/utils/dbConnect';
 import { Contest } from "@/models/Contest";
 import { UserInfo } from "@/models/UserInfo";
 import { Problem } from "@/models/Problem";
 import { SolvedProblem } from "@/models/SolvedProblem";
 
-await dbConnect();
 
 export async function POST(req) {
+    await dbConnect();
     const body = await req.json();
     const createdContest = await Contest.create(body);
-    return Response.json(createdContest);
+    return new Response(createdContest);
     }
 
 export async function GET() {
+    await dbConnect();
     const contests = await Contest.find({});
-    return Response.json(contests);
+    return Response(contests);
 }
 
 export async function PUT(req) {
+    await dbConnect();
     const body = await req.json();
     const contest = await Contest.findOne({id : body.id});
     const user = await UserInfo.findOne({id : body.user});
@@ -43,5 +45,5 @@ export async function PUT(req) {
         ranklist[userIndex].finish_time += contest.start - solvedProblem.solution[0].submissionTime;
     }
     await Contest.updateOne({id : body.id}, {ranklist : ranklist});
-    return Response.json(contest);
+    return new Response(contest);
 }

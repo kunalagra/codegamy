@@ -14,6 +14,7 @@ export async function GET() {
         const data = await UserInfo.findById(user.userInfo )
         return new Response(JSON.stringify(data), {status: 200})
       } 
+      else return new Response("User not logged in")
     }catch (error) {  
         console.error(error);
         return new Response(error,{status: 500})

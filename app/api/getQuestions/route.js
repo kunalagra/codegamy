@@ -7,15 +7,11 @@ export async function GET() {
     await dbConnect();
 
     try {
-      const session = await getServerSession(authOptions);
-      if (session?.user?._id){
         const getRandQs = await Question.aggregate([
           { $sample: { size: 1 } }
         ]);
 
         return new Response(JSON.stringify(getRandQs), {status: 200})
-
-      } 
     }catch (error) {  
         console.error(error);
         return new Response(error,{status: 500})
