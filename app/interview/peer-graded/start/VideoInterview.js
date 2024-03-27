@@ -4,7 +4,6 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { ReactMediaRecorder } from "react-media-recorder-2";
 import Webcam from "react-webcam";
 
 const VideoInterview = ({ questions }) => {
@@ -47,10 +46,14 @@ const VideoInterview = ({ questions }) => {
       setSubmitted(false); router.push('/interview');
     });
   };
+  const ReactMediaRecorder = dynamic(() => import('react-media-recorder-2').then((mod) => mod.ReactMediaRecorder), {
+    ssr: false,
+  });
 
   return (
     <>
       <div>
+        
         <ReactMediaRecorder
           video
           render={({ status, startRecording, stopRecording, mediaBlobUrl }) => {
