@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://codegamyapp.vercel.app/"><img src="https://raw.githubusercontent.com/kunalagra/codegamy/main/public/logo.png" alt="Codegamy" width="200"></a>
+  <a href="https://codegamy.vercel.app/"><img src="https://raw.githubusercontent.com/kunalagra/codegamy/main/public/logo.png" alt="Codegamy" width="200"></a>
   <br>
   Codegamy
   <br>
