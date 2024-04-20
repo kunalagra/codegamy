@@ -9,16 +9,17 @@ import "react-multi-carousel/lib/styles.css";
 export default function ProfileSection() {
   const [data, setData] = useState({});
 
-  useEffect(() => {
-    async function fetchUserInfo() {
-      try {
-        const response = await axios.get("/api/getUserInfo");
-        const data = response.data;
-        setData(data);
-      } catch (error) {
-        console.error("Error fetching user info:", error);
-      }
+  async function fetchUserInfo() {
+    try {
+      const response = await axios.get("/api/getUserInfo");
+      const data = response.data;
+      setData(data);
+    } catch (error) {
+      console.error("Error fetching user info:", error);
     }
+  }
+  
+  useEffect(() => {
 
     fetchUserInfo();
   }, []);
@@ -169,7 +170,7 @@ export default function ProfileSection() {
             <div className="w-24 mr-2 font-medium">Amount:</div>
             <div className="text-gray-800">{data.amount}</div>
           </div>
-          <Link href="/edit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center">
+          <Link href="/edit-profile" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center">
             Edit Profile
           </Link>
         </div>
