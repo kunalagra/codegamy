@@ -15,7 +15,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-8">
 
           <div className='flex justify-between items-center max-w-5xl mx-auto mb-20 max-md:flex-col-reverse max-md:gap-5'>
-            <div className='flex flex-col gap-6 items-start'>
+            <div className='flex flex-col gap-6 items-start max-sm:gap-5 max-xs:gap-3'>
               <p className="text-7xl max-sm:text-6xl max-xs:text-4xl text-gray-400 font-bold text-center">Learn</p>
               <p className="text-7xl max-sm:text-6xl max-xs:text-4xl text-gray-500 font-bold text-center">Compete</p>
               <p className="text-7xl max-sm:text-6xl max-xs:text-4xl text-gray-600 font-bold text-center">Collaborate.</p>

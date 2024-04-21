@@ -172,7 +172,7 @@ const Form = () => {
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center mt-8">
+    <div className="flex items-center justify-center mt-8 px-2">
       <div className="max-w-lg w-full">
         <Link href="/profile" className='text-gray-2'>⯇ Back</Link>
         <h1 className="text-2xl font-bold my-4">Update Profile</h1>

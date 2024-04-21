@@ -39,7 +39,7 @@ export default function LoginPage() {
   }
 
   return (
-    <section className="flex flex-col justify-center items-center min-h-[90vh]">
+    <section className="flex flex-col justify-center items-center min-h-[72vh]">
       {error && (
         <div className="my-4 text-center bg-red-500 py-2 px-6 text-white rounded-full cursor-pointer" onClick={() => setError(false)}>
           An error has occurred. Please try again!!
@@ -55,7 +55,7 @@ export default function LoginPage() {
           CODEGAMY
         </h2>
       </Link>
-      <form className="block mx-auto w-[400px]" onSubmit={isLogin? handleLogin : handleRegister}>
+      <form className="block mx-auto w-full max-w-[400px] px-2" onSubmit={isLogin? handleLogin : handleRegister}>
         <div className="mb-4">
           <input
             type="email"
