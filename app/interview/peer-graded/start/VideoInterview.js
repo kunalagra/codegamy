@@ -1,19 +1,17 @@
 'use client'
 
 import axios from "axios";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import Webcam from "react-webcam";
 
-const VideoInterview = ({ questions }) => {
+const Timer = ({ hasStarted, minutes, setMinutes, seconds, setSeconds }) => {
 
-  const [attempted, setAttempted] = useState(0);
-  const [minutes, setMinutes] = useState(1);
-  const [seconds, setSeconds] = useState(30);
-  const [hasStarted, setHasStarted] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const router = useRouter();
+  const handleDecimal = (num) => {
+    return num < 10? '0' + num : num;
+  }
 
   useEffect(() => {
     let interval;
@@ -32,9 +30,22 @@ const VideoInterview = ({ questions }) => {
     return () => clearInterval(interval);
   }, [hasStarted, minutes, seconds]);
 
-  const handleDecimal = (num) => {
-    return num < 10? '0' + num : num;
-  }
+  return (
+    <div className="text-right mb-2">
+      <p>Time remaining - <span className="font-medium">{handleDecimal(minutes)}:{handleDecimal(seconds)}</span></p>
+    </div>
+  )
+}
+
+
+const VideoInterview = ({ questions }) => {
+
+  const [attempted, setAttempted] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [minutes, setMinutes] = useState(1);
+  const [seconds, setSeconds] = useState(30);
+  const router = useRouter();
 
   const blobUrlToFile = async (blobUrl) => {
     setSubmitted(true);
@@ -64,6 +75,7 @@ const VideoInterview = ({ questions }) => {
             if (minutes===0 && seconds===0) {
               stopRecording();
             }
+
             return (
               <div className="flex flex-col items-center gap-6 w-[650px] mx-auto">
                 <div className="flex flex-col gap-2">
@@ -74,9 +86,14 @@ const VideoInterview = ({ questions }) => {
                   ))}
                 </div>
                 <div>
-                  <div className="text-right mb-2">
-                    <p>Time remaining - <span className="font-medium">{handleDecimal(minutes)}:{handleDecimal(seconds)}</span></p>
-                  </div>
+                  
+                  <Timer 
+                    hasStarted={hasStarted} 
+                    minutes={minutes}
+                    setMinutes={setMinutes}
+                    seconds={seconds}
+                    setSeconds={setSeconds}  
+                  />
                   
                   {recording? (
                     <Webcam className="w-full h-auto" />
@@ -99,7 +116,7 @@ const VideoInterview = ({ questions }) => {
                       onClick={() => {
                         startRecording();
                       }}
-                      className="w-full bg-blue-500 text-light-1 px-3 py-2 rounded-lg"
+                      className="w-full bg-blue-500 text-light-1 px-3 py-2 rounded-xl"
                     >
                       {attempted === 0 ? "Start" : "Retake"}
                     </button>
@@ -107,7 +124,7 @@ const VideoInterview = ({ questions }) => {
                   {!(idle || stopped) && (
                     <button
                       onClick={() => stopRecording()}
-                      className="w-full bg-blue-500 text-light-1 px-3 py-2 rounded-lg"
+                      className="w-full bg-blue-500 text-light-1 px-3 py-2 rounded-xl"
                     >
                       Stop
                     </button>
@@ -117,7 +134,7 @@ const VideoInterview = ({ questions }) => {
                       onClick={() => {
                         blobUrlToFile(mediaBlobUrl);
                       }}
-                      className="w-full bg-blue-500 text-light-1 px-3 py-2 rounded-lg"
+                      className="w-full bg-blue-500 text-light-1 px-3 py-2 rounded-xl"
                     >
                       Finish
                     </button>

@@ -13,7 +13,7 @@ const Workspace = ({ problems }) => {
 	return (
 		<>
 			{submitted && <Confetti gravity={0.3} tweenDuration={5000} />}
-			<Split className='split px-1 h-[92vh]' minSize={500}>
+			<Split className='split px-1 h-[92vh] max-md:hidden' minSize={500}>
 				<ProblemDesc problems={problems} />
 				<Playground problems={problems} setSubmitted={setSubmitted} />
 			</Split>

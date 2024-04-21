@@ -22,9 +22,9 @@ const Problems = () => {
     }, []);
 
     const difficultyColors = {
-        'Hard' : 'bg-red-500' ,
-        'Medium': 'bg-orange-500' ,
-        'Easy': 'bg-green-500'
+        'Hard' : 'bg-red-700' ,
+        'Medium': 'bg-orange-600' ,
+        'Easy': 'bg-green-600'
     };
 
     const openVideoPopup = (videoUrl) => {
@@ -37,44 +37,45 @@ const Problems = () => {
 
     return (
         <div>
-            <div className="p-10">
-                <div className="relative overflow-x-auto sm:rounded-lg shadow-lg">
-                    <table className="w-full text-sm text-left rtl:text-right ">
-                        <thead className="text-xs text-gray-500 uppercase bg-light-3">
+            <div className="p-10 max-md:p-3">
+                <div className="relative overflow-auto rounded-xl shadow-xl max-w-6xl mx-auto">
+                    <table className="w-full text-sm text-left rtl:text-right">
+                        <thead className=" text-gray-700 uppercase bg-light-3">
                             <tr>
-                                <th scope="col" className="p-4">
-                                    Status
+                                <th scope="col" className="p-6">
+                                    Sr No.
                                 </th>
-                                <th scope="col" className="px-6 py-3">
+                                <th scope="col" className="p-6">
                                     Problem Title
                                 </th>
-                                <th scope="col" className="px-6 py-3">
+                                <th scope="col" className="p-6">
                                     Difficulty
                                 </th>
-                                <th scope="col" className="px-6 py-3">
+                                <th scope="col" className="p-6">
                                     Category
                                 </th>
-                                <th scope="col" className="px-6 py-3">
-                                    Solution
+                                <th scope="col" className="p-6">
+                                    Status
                                 </th>
-                                <th scope="col" className="px-6 py-3">
-                                    Video Solution
+                                <th scope="col" className="p-6">
+                                    Video Soln
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
                             {problems.map((problem, index) => (
                                 <tr key={index} className="bg-light-2 hover:bg-light-4">
-                                    <td className="w-4 p-4">
+                                    <td className="p-4 text-center">
                                         <div>
-                                            <ImCheckboxChecked size={20} color={'green'}/>
+                                            {index+1}
                                         </div>
                                     </td>
-                                    <th scope="row" className="px-6 py-4 hover:text-blue-500 hover:cursor-pointer font-medium whitespace-nowrap">
-                                        <div onClick={() => {
+                                    <th scope="row" className="px-6 py-4 hover:text-blue-500 hover:font-semibold hover:cursor-pointer font-medium whitespace-nowrap transition-all ease-in">
+                                        <div className='w-[300px] text-ellipsis overflow-hidden' 
+                                            onClick={() => {
                                             router.push(`/problems/${problem.id}`);
                                         }}>
-                                            {problem.order}. {problem.title}
+                                            {problem.title} 
                                         </div>
                                     </th>
                                     <td>
@@ -86,10 +87,10 @@ const Problems = () => {
                                         {problem.category}
                                     </td>
                                     <td className="px-6 py-4 cursor-pointer">
-                                        <AiOutlineSolution color={'blue'} size={24} onClick={() => openVideoPopup(problem.videoId)} />
+                                    <ImCheckboxChecked size={20} color={'green'} className='mx-auto'/>
                                     </td>
                                     <td className="px-6 py-4 cursor-pointer">
-                                        <ImYoutube2 color={'red'} size={35} onClick={() => openVideoPopup(problem.videoId)} />
+                                        <ImYoutube2 color={'red'} size={35} onClick={() => openVideoPopup(problem.videoId)} className='mx-auto' />
                                     </td>
                                 </tr>
                             ))}
@@ -98,17 +99,15 @@ const Problems = () => {
                 </div>
             </div>
             {selectedVideo && (
-                <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-50">
-                    <div className="bg-white p-8 rounded-lg flex flex-col items-end gap-2">
+                <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-50 p-2">
+                    <div className="w-full max-w-xl bg-white p-8 rounded-lg flex flex-col items-end gap-2 max-sm:p-3">
                         <button onClick={closeVideoPopup} className="text-gray-600 hover:text-gray-800 focus:outline-none">
                             Close
                         </button>
                         <iframe
-                            width="560"
-                            height="315"
+                            className='w-full aspect-video'
                             src={`https://www.youtube.com/embed/${selectedVideo}`}
                             title="YouTube Video"
-                            frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                         ></iframe>

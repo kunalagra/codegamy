@@ -14,16 +14,16 @@ export default function Home() {
       <main className="min-h-screen">
         <div className="container mx-auto px-4 py-8">
 
-          <div className='flex justify-between items-center max-w-5xl mx-auto mb-20'>
+          <div className='flex justify-between items-center max-w-5xl mx-auto mb-20 max-md:flex-col-reverse max-md:gap-5'>
             <div className='flex flex-col gap-6 items-start'>
-              <p className="text-7xl text-gray-400 font-bold text-center">Learn</p>
-              <p className="text-7xl text-gray-500 font-bold text-center">Compete</p>
-              <p className="text-7xl text-gray-600 font-bold text-center">Collaborate.</p>
+              <p className="text-7xl max-sm:text-6xl max-xs:text-4xl text-gray-400 font-bold text-center">Learn</p>
+              <p className="text-7xl max-sm:text-6xl max-xs:text-4xl text-gray-500 font-bold text-center">Compete</p>
+              <p className="text-7xl max-sm:text-6xl max-xs:text-4xl text-gray-600 font-bold text-center">Collaborate.</p>
             </div>
             <img
               src='/logo.png'
               alt='codegamy_logo'
-              className='w-80 h-80 object-contain'
+              className='w-80 h-80 max-sm:w-64 max-sm:h-64 max-xs:w-48 max-xs:h-48 object-contain'
             />
           </div>
 
@@ -66,10 +66,10 @@ function FeatureCard({ title, description }) {
 function DeveloperCard({ name, designation, role, linkedin, github }) {
   return (
     <div className='flex items-center w-full cursor-pointer group hover:ml-[15px] transition-all ease-in'>
-      <div className='flex rounded-full w-28 h-28 p-2 bg-gray-200 z-10 group-hover:bg-gray-400 transition-all ease-in'>
+      <div className='flex rounded-full w-28 h-28 max-sm:hidden p-2 bg-gray-200 z-10 group-hover:bg-gray-400 transition-all ease-in'>
         <img src='profile.png' alt={name} className='w-full h-full object-contain' />
       </div>
-      <div className='flex flex-grow justify-between items-center bg-gray-100 py-4 px-12 ml-[-30px] rounded-r-full group-hover:bg-gray-900 transition-all ease-in'>
+      <div className='flex flex-grow flex-wrap gap-3 justify-between items-center bg-gray-100 py-4 px-12 ml-[-30px] rounded-r-full group-hover:bg-gray-900 transition-all ease-in'>
         <div className='flex flex-col'>
           <div className='flex items-center gap-2'>
             <h3 className="text-xl font-semibold mb-2 group-hover:text-white">{name}</h3>
@@ -79,10 +79,10 @@ function DeveloperCard({ name, designation, role, linkedin, github }) {
         </div>
         <div className='flex gap-5'>
           <Link href={linkedin} target="_blank" rel="noopener noreferrer" className="bg-gray-200 rounded-full p-3 group-hover:bg-gray-400 transition-all ease-in">
-            <FaLinkedin className="w-8 h-8 text-blue-700 hover:text-blue-500" />
+            <FaLinkedin className="w-8 h-8 max-sm:w-5 max-sm:h-5 text-blue-700 hover:text-blue-500" />
           </Link>
           <Link href={github} target="_blank" rel="noopener noreferrer" className="bg-gray-200 rounded-full p-3 group-hover:bg-gray-400 transition-all ease-in">
-            <FaGithub className="w-8 h-8 text-gray-700 hover:text-gray-500" />
+            <FaGithub className="w-8 h-8 max-sm:w-5 max-sm:h-5 text-gray-700 hover:text-gray-500" />
           </Link>
         </div>
       </div>

@@ -19,7 +19,7 @@ const page = () => {
 
 
   return (
-    <div className='w-full h-[92vh] max-w-6xl px-2 mx-auto pt-6'>
+    <div className='w-full min-h-[72vh] max-w-6xl px-2 py-12 mx-auto flex items-center justify-center'>
         
         <VideoInterview questions={questions} />
     </div>

@@ -39,7 +39,7 @@ const page = () => {
     <div className="w-full flex flex-col gap-5 max-w-6xl mx-auto px-2 mt-3 mb-10">
       <div>
         <Link href="/contests" className="font-semibold text-gray-400">
-          Back to Contests
+         ⯇ Back to Contests
         </Link>
       </div>
 

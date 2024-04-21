@@ -11,5 +11,5 @@ export async function POST(req) {
 export async function GET() {
   await dbConnect();
   const courses = await Course.find({});
-  return new Response(courses);
+  return new Response(JSON.stringify(courses));
 }

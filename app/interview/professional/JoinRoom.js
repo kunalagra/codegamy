@@ -6,17 +6,25 @@ import './JoinRoom.css'
 import { useRouter } from "next/navigation";
 
 export default function JoinRoom() {
-    const navigate = useRouter()
-    const [roomId, setRoomId] = useState(() => "")
-    const [username, setUsername] = useState(() => "")
+    const navigate = useRouter();
+    const [roomId, setRoomId] = useState("");
+    const [username, setUsername] = useState("");
+    const [joining, setJoining] = useState(false);
 
     function handleRoomSubmit(e) {
         e.preventDefault()
+        setJoining(true);
         if (!validate(roomId)) {
             toast.error("Incorrect room ID")
+            setJoining(false);
             return
         }
-        if (username) navigate.push(`/interview/professional/room/${roomId}?username=${username}`);
+        if (username) {
+            setTimeout(() => {
+                setJoining(false);
+                navigate.push(`/interview/professional/room/${roomId}?username=${username}`);
+            }, 2000);
+        }
     }
 
     function createRoomId(e) {
@@ -29,15 +37,29 @@ export default function JoinRoom() {
     }
 
     return (
-        <div className="joinBoxWrapper bg-light-2">
-            <form className="joinBox p-6 py-10" onSubmit={handleRoomSubmit}>
-                <h1 className="font-medium">
+        <div className="joinBoxWrapper">
+            <form className="w-full max-w-[500px] flex flex-col justify-center items-center gap-4 p-6 py-10" onSubmit={handleRoomSubmit}>
+                <h1 className="font-semibold text-2xl">
                     Professional Interview
                 </h1>
 
+                <div className="joinBoxInputWrapper mt-7">
+                    <input
+                        className="shadow-md p-4 bg-light-2 rounded-xl w-full"
+                        id="usernameInput"
+                        type="text"
+                        placeholder="Username"
+                        required
+                        value={username}
+                        onChange={e => { setUsername(e.target.value) }}
+                        autoSave="off"
+                        autoComplete="off"
+                    />
+                </div>
+
                 <div className="joinBoxInputWrapper">
                     <input
-                        className="joinBoxInput"
+                        className="shadow-md p-4 bg-light-2 rounded-xl w-full"
                         id="roomIdInput"
                         type="text"
                         placeholder="Invite Code"
@@ -49,21 +71,14 @@ export default function JoinRoom() {
                     />
                 </div>
 
-                <div className="joinBoxInputWrapper">
-                    <input
-                        className="joinBoxInput"
-                        id="usernameInput"
-                        type="text"
-                        placeholder="Enter Guest Username"
-                        required
-                        value={username}
-                        onChange={e => { setUsername(e.target.value) }}
-                        autoSave="off"
-                        autoComplete="off"
-                    />
-                </div>
-
-                <button className="w-full text-light-1 bg-blue-500 hover:bg-blue-600 transition-all px-3 py-2 rounded-lg" type="submit">Join</button>
+                <button className="w-full mb-12 mt-4 text-light-1 bg-dark-1 transition-all p-3 rounded-xl disabled:cursor-not-allowed" type="submit"
+                    disabled={joining || username==="" || roomId===""}
+                >
+                    {joining? 
+                        <img src="/loader.svg" alt="loading" className="w-6 h-6 object-contain mx-auto" /> :
+                        "Join"
+                    }
+                </button>
                 <p>Don't have an invite code? Create your <span
                     style={{ textDecoration: "underline", cursor: "pointer" }}
                     onClick={createRoomId}

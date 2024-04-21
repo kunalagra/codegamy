@@ -13,10 +13,6 @@
     @apply bg-white text-dark-1 min-h-screen font-poppins;
   }
 
-  ::-webkit-scrollbar {
-    width: 0;
-  }
-
   h1 {
     @apply text-xl font-semibold leading-[140%] tracking-tighter;
   }

@@ -41,7 +41,7 @@ const page = () => {
     ]
 
     return (
-        <div className='w-full min-h-[92vh] flex justify-center flex-wrap bg-gray-100 pt-5'>
+        <div className='w-full min-h-[92vh] max-w-6xl mx-auto flex justify-center flex-wrap my-12 gap-6'>
             {courses.map((course, index) => (
                 <CourseCard
                     key={index}

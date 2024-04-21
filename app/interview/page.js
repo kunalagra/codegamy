@@ -76,11 +76,11 @@ const page = () => {
     <>
         <div className='w-full max-w-6xl flex flex-col gap-10 px-2 mx-auto pt-5 pb-10'>
             <div className=''>
-                <h2 className='font-medium mb-3'>
+                <h1 className='font-medium mb-3'>
                     Create an Interview
-                </h2>
-                <div className='flex gap-10'>
-                    <Link href="/interview/peer-graded" className='w-[300px] flex flex-col items-center gap-2 rounded-lg shadow-lg bg-light-3 py-14 text-center hover:bg-light-4 transition-all'>
+                </h1>
+                <div className='flex gap-10 flex-wrap'>
+                    <Link href="/interview/peer-graded" className='w-[300px] flex flex-col items-center gap-2 text-white rounded-3xl shadow-xl bg-blue-500 py-14 text-center hover:bg-blue-600 hover:scale-[1.03] transition-all ease-in'>
                         <img 
                             src='/p2p.png'
                             alt="p2p"
@@ -88,7 +88,7 @@ const page = () => {
                         />
                         <p>Peer-graded Interview</p>
                     </Link>
-                    <Link href="/interview/professional" className='w-[300px] rounded-lg shadow-lg bg-light-3 flex flex-col items-center gap-2 py-14 text-center hover:bg-light-4 transition-all'>
+                    <Link href="/interview/professional" className='w-[300px] flex flex-col items-center gap-2 text-white rounded-3xl shadow-xl bg-blue-500 py-14 text-center hover:bg-blue-600 hover:scale-[1.03] transition-all ease-in'>
                         <img 
                             src='/professional.png'
                             alt="professional"
@@ -100,14 +100,14 @@ const page = () => {
             </div>
 
             <div>
-                <h2 className='font-medium mb-3'>
+                <h1 className='font-medium mb-3'>
                     Past Interviews
-                </h2>
+                </h1>
                 <div className='w-full flex gap-10 flex-wrap'>
                     {interviews && interviews.length > 0? (
                         interviews.map((interview, index) => (
                             <div key={index} onClick={() => {setInterviewDetails(interview); setIsInterviewModalOpen(true); setIsAssigned(false);}}
-                            className='w-[340px] rounded-lg flex flex-col items-center gap-2 cursor-pointer shadow-lg bg-gray-200 py-14 text-center hover:bg-gray-300 transition-all'>
+                            className='w-[340px] flex flex-col items-center gap-2 text-white rounded-3xl shadow-xl bg-gray-500 py-14 text-center hover:bg-gray-600 hover:scale-[1.03] transition-all ease-in cursor-pointer'>
                                 <img 
                                     src='/interview.png'
                                     alt="interview"
@@ -123,14 +123,14 @@ const page = () => {
             </div>
 
             <div>
-                <h2 className='font-medium mb-3'>
+                <h1 className='font-medium mb-3'>
                     Assigned Interviews
-                </h2>
+                </h1>
                 <div className='w-full flex gap-10 flex-wrap'>
                     {assignedInterviews && assignedInterviews.assigned && assignedInterviews.assigned.length > 0? (
                         assignedInterviews.assigned.map((interview, index) => (
                             <div key={index} onClick={() => {setInterviewDetails(interview); setIsInterviewModalOpen(true); setIsAssigned(true);}}
-                            className='w-[330px] flex flex-col items-center gap-2 rounded-lg cursor-pointer shadow-lg bg-stone-200 py-14 text-center hover:bg-stone-300 transition-all'>
+                            className='w-[330px] flex flex-col items-center gap-2 text-white rounded-3xl shadow-xl bg-gray-700 py-14 text-center hover:bg-gray-800 hover:scale-[1.03] transition-all ease-in cursor-pointer'>
                                 <img 
                                     src='/assignment.png'
                                     alt="assignment"
@@ -149,9 +149,9 @@ const page = () => {
 
         { isInterviewModalOpen && (
             <div className='fixed top-0 left-0 w-full h-full bg-black/50 flex justify-center items-center'>
-                <div className='bg-light-1 w-[600px] max-h-[92vh] px-10 py-12 shadow-lg mx-auto rounded-lg overflow-y-auto'>
-                    <div className='w-full text-right cursor-pointer'>
-                        <p onClick={() => setIsInterviewModalOpen(false)}>X</p>
+                <div className='bg-light-1 w-[600px] max-h-[92vh] px-10 py-12 shadow-lg mx-auto rounded-xl overflow-y-auto'>
+                    <div className='w-full text-right cursor-pointer mb-4'>
+                        <p onClick={() => setIsInterviewModalOpen(false)}>Close</p>
                     </div>
                     {isAssigned? (
                         
@@ -206,7 +206,7 @@ const page = () => {
                                 className="w-full h-auto"
                             />
                             {Array.isArray(interviewDetails.reviews) && interviewDetails.reviews.map((review, index) => (
-                                <div className='w-full flex flex-col gap-2' key={index}>
+                                <div className='w-full flex flex-col gap-2 border-t-2 border-light-4 pt-3' key={index}>
                                     <h2 className='font-medium'>User {index+1}</h2>    
                                     <div className="w-full">
                                         <p className='font-medium'>Rating</p>

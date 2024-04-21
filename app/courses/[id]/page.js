@@ -43,7 +43,7 @@ const page = () => {
     
 
     return (
-        <div className="w-full px-1 h-[92vh] flex gap-3 pr-5">
+        <div className="w-full px-4 h-[92vh] flex gap-3 max-md:flex-col mb-12">
             <Modules modules={moduledata} setData={setData} data={contentdata} />
             <Content content={data} title={courseId} />
         </div>
