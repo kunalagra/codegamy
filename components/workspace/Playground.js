@@ -133,8 +133,8 @@ const Playground = ({ problems, isForSubmission = true, setSubmitted }) => {
 
   return (
     <div className="w-full flex flex-col">
-      <div className="flex px-4 gap-2 justify-between">
-        <div className="flex gap-2">
+      <div className="flex px-4 gap-2 justify-between max-md:mt-12 flex-wrap">
+        <div className="flex gap-2 flex-wrap">
           <LanguagesDropdown onSelectChange={(lang) => {setLanguage(lang);setCode(mockComments[lang.value])}} />
           <ThemeDropdown handleThemeChange={(th) => setTheme(th)} />
           <FontSizeDropdown onSelectChange={(f) => setFontSize(f)} />
@@ -154,7 +154,7 @@ const Playground = ({ problems, isForSubmission = true, setSubmitted }) => {
       </div>
 
       <Split
-        className="!w-full flex-grow flex flex-col items-start px-4 pt-4"
+        className="!w-full flex-grow flex flex-col items-start px-4 pt-4 max-md:hidden"
         direction="vertical"
         minSize={100}
       >
@@ -198,6 +198,50 @@ const Playground = ({ problems, isForSubmission = true, setSubmitted }) => {
           </div>
         </div>
       </Split>
+
+      <div
+        className="!w-full flex-grow flex flex-col items-start px-4 pt-4 md:hidden max-md:w-[500px]"
+      >
+        <CodeEditorWindow
+          code={code}
+          onChange={onChange}
+          language={language.value}
+          theme={theme.value}
+          fontSize={fontSize.value}
+        />
+
+        <div className="!w-full min-h-[30%] flex flex-col">
+          <div className="flex justify-end items-center gap-3">
+            <button
+              onClick={() => handleCompile(customInput)}
+              disabled={!code}
+              className={`px-4 py-2 bg-dark-4 text-light-1 mt-2 rounded-lg text-sm`}
+            >
+              {isCodeRunning ? <Loader /> : "Run"}
+            </button>
+            {isForSubmission && (
+              <button
+                onClick={handleSubmit}
+                disabled={!code}
+                className={`px-4 py-2 bg-green-600 text-light-1 mt-2 rounded-lg text-sm`}
+              >
+                {isCodeSubmitting ? <Loader /> : "Submit"}
+              </button>
+            )}
+          </div>
+
+          <div className="flex gap-5 flex-grow max-xs:flex-col">
+            <div className="!w-full flex flex-col max-xs:h-[250px]">
+              <h1 className="font-bold text-lg">Custom Input</h1>
+              <CustomInput
+                customInput={customInput}
+                setCustomInput={setCustomInput}
+              />
+            </div>
+            <OutputWindow outputDetails={outputDetails} additionalStyles={'max-md:h-[250px]'} />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

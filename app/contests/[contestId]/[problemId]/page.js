@@ -38,7 +38,7 @@ const page = () => {
 
     return (
         <div className='w-full flex flex-col gap-10 max-w-6xl mx-auto mt-3 mb-10 px-2'>
-            <div className='flex items-start gap-5'>
+            <div className='flex items-start gap-5 max-md:flex-col max-md:items-center'>
                 <div>
                     <h1 className='font-semibold text-2xl py-2'>
                         {problem?.order}. {problem?.title}

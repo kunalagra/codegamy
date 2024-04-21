@@ -15,7 +15,7 @@ const CodeEditorWindow = ({ onChange, language, code, theme, fontSize, forProble
   };
 
   return (
-    <div className={`flex flex-col !w-full justify-start items-end overlay rounded-md overflow-hidden shadow-4xl bg-dark-1 ${forProblemsPage? 'min-h-[20%]' : 'h-[500px]'}`}>
+    <div className={`flex flex-col !w-full justify-start items-end overlay rounded-md overflow-hidden shadow-4xl bg-dark-1 ${forProblemsPage? 'min-h-[20%]' : 'h-[500px]'} max-md:h-[500px]`}>
         <ReactCodeMirror
           value={code}
           onChange={handleEditorChange}

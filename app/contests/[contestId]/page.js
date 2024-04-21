@@ -43,7 +43,7 @@ const page = () => {
         </Link>
       </div>
 
-      <div className="flex gap-5">
+      <div className="flex gap-5 max-md:flex-col max-md:items-center">
         <div className="flex-grow">
           <div className={`flex border ${isUpcoming? 'border-blue-500' : isOngoing? 'border-green-500' : 'border-light-4'} rounded-lg mb-5`}>
             <div className={`${isUpcoming? 'bg-blue-500' : isOngoing? 'bg-green-500' : 'bg-light-4'} w-5 rounded-l-lg`} />
@@ -85,7 +85,7 @@ const page = () => {
           </ul>
         </div>
 
-        <div className="min-w-[300px] max-w-[300px] bg-light-2 rounded-lg h-fit shadow-lg pb-2">
+        <div className="w-full max-w-[300px] bg-light-2 rounded-lg h-fit shadow-lg pb-2">
           <div className="flex items-center gap-3 bg-light-3 pt-4 pb-3 px-6 rounded-t-lg">
             <img
               src="/prize.png"
@@ -123,11 +123,11 @@ const page = () => {
       )}
 
       {!isUpcoming && (
-        <div className="mt-10 flex items-start gap-5">
+        <div className="mt-10 flex items-start gap-5 max-md:flex-col">
           <div className="w-full border border-light-3 rounded-lg hover:shadow-lg transition-all">
             <div className="bg-light-3 flex justify-between items-center px-4 py-2.5 rounded-t-lg">
-              <p className="font-medium">Problem list</p>
-              <p className="font-medium">Score</p>
+              <p className="font-medium max-xs:text-sm">Problem list</p>
+              <p className="font-medium max-xs:text-sm">Score</p>
             </div>
             {problems.map((prob, index) => (
               <Link key={index} href={`/contests/${params.contestId}/${prob.title.toLowerCase().split(' ').join('-')}`}
@@ -147,20 +147,20 @@ const page = () => {
             </div>
 
             <div className="flex bg-light-2 px-4 py-2.5">
-              <p className="w-[15%] font-medium">Rank</p>
-              <p className="w-[40%] font-medium">Name</p>
-              <p className="w-[15%] font-medium">Score</p>
-              <p className="w-[30%] font-medium">Finish Time</p>
+              <p className="w-[15%] font-medium max-xs:text-sm text-center">Rank</p>
+              <p className="w-[40%] font-medium max-xs:text-sm text-center">Name</p>
+              <p className="w-[15%] font-medium max-xs:text-sm text-center">Score</p>
+              <p className="w-[30%] font-medium max-xs:text-sm text-center">Finish Time</p>
             </div>
 
             {rankings.map((ranking, index) => (
               <div key={index} className="flex bg-light-1 px-4 py-2.5 hover:bg-light-2 border-b border-light-3">
-                <p className="text-sm w-[15%]">{index+1}</p>
-                <Link href={`/profile/${ranking.username}`} className="text-sm w-[40%] hover:text-blue-500">
+                <p className="text-sm w-[15%] text-center">{index+1}</p>
+                <Link href={`/profile/${ranking.username}`} className="text-sm w-[40%] hover:text-blue-500 text-center">
                   {ranking.username}
                 </Link>
-                <p className="text-sm w-[15%]">{ranking.score}</p>
-                <p className="text-sm w-[30%]">{ranking.finish_time}</p>
+                <p className="text-sm w-[15%] text-center">{ranking.score}</p>
+                <p className="text-sm w-[30%] text-center">{ranking.finish_time}</p>
               </div>
             ))}
 

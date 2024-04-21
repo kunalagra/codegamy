@@ -14,7 +14,7 @@ const ProfileCard = ({ id, username, attended, rating }) => {
         </div>
         <div>
             <h2 className='group-hover:text-blue-500'>{username}</h2>
-            <div className='mt-1 flex items-center gap-4'>
+            <div className='mt-1 flex items-center gap-4 flex-wrap max-xs:gap-1'>
                 <p className='text-sm'>
                     <span className='font-medium'>Rating:</span> {rating}
                 </p>

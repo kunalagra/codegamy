@@ -1,8 +1,8 @@
 import React from "react";
 
-const OutputWindow = ({ outputDetails }) => {
+const OutputWindow = ({ outputDetails, additionalStyles }) => {
   return (
-    <div className="!w-full flex-grow flex flex-col">
+    <div className={`!w-full flex-grow flex flex-col ${additionalStyles}`}>
       <h3 className="font-bold text-lg mb-2">Output</h3>
       
       {outputDetails?

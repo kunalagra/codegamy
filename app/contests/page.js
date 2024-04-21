@@ -26,7 +26,7 @@ const page = () => {
   ];
 
   return (
-    <div className='w-full max-w-6xl flex mx-auto my-5 gap-5 px-2'>
+    <div className='w-full max-w-6xl flex mx-auto my-5 gap-5 px-3 max-md:flex-col'>
       <div className="flex flex-grow flex-col gap-5">
         <div>
           <h1>Ongoing Contest</h1>
@@ -67,7 +67,7 @@ const page = () => {
         </div>
       </div>
 
-      <div className="min-w-[350px] max-w-[350px] bg-light-2 rounded-lg h-fit shadow-lg">
+      <div className="w-full max-w-[350px] bg-light-2 rounded-lg h-fit shadow-lg max-lg:mx-auto max-lg:mt-12">
         <div className="flex items-center gap-3 bg-light-3 pt-4 pb-3 px-6 rounded-t-lg">
           <img
             src='/ranking.png'

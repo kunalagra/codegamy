@@ -124,8 +124,8 @@ const Playground = ({ problem=null, isForSubmission = true, setSubmitted }) => {
 
   return (
     <div className="w-full flex flex-col">
-      <div className="flex gap-2 justify-between">
-        <div className="flex gap-2">
+      <div className="flex gap-2 justify-between flex-wrap">
+        <div className="flex gap-2 flex-wrap">
           <LanguagesDropdown onSelectChange={(lang) => {setLanguage(lang);setCode(mockComments[lang.value])}} />
           <ThemeDropdown handleThemeChange={(th) => setTheme(th)} />
           <FontSizeDropdown onSelectChange={(f) => setFontSize(f)} />
@@ -174,7 +174,7 @@ const Playground = ({ problem=null, isForSubmission = true, setSubmitted }) => {
             )}
           </div>
 
-          <div className="flex gap-5 flex-grow">
+          <div className="flex gap-5 flex-grow max-sm:flex-col">
             <div className="!w-full flex flex-col h-[250px]">
               <h1 className="font-bold text-lg">Custom Input</h1>
               <CustomInput
@@ -182,7 +182,7 @@ const Playground = ({ problem=null, isForSubmission = true, setSubmitted }) => {
                 setCustomInput={setCustomInput}
               />
             </div>
-            <OutputWindow outputDetails={outputDetails} />
+            <OutputWindow outputDetails={outputDetails} additionalStyles={'h-[250px]'} />
           </div>
         </div>
       </div>

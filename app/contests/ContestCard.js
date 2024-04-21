@@ -3,10 +3,10 @@ import React from 'react'
 
 const ContestCard = ({ contestId, contestUrl, isUpcoming=false, isOngoing }) => {
   return (
-    <Link href={`/contests/${contestUrl}`} className='w-full flex justify-between items-center bg-light-2 rounded-full group pl-4 pr-10 py-2 hover:bg-dark-1 transition-all ease-in'>
-        <div className='flex items-center gap-4'>
+    <Link href={`/contests/${contestUrl}`} className='w-full flex justify-between items-center bg-light-2 rounded-l-full rounded-r-full group pl-4 pr-10 py-2 hover:bg-dark-1 transition-all ease-in max-lg:rounded-l-md max-sm:rounded-xl max-xs:flex-col max-xs:items-start hover:scale-[1.03] max-sm:pl-6'>
+        <div className='flex items-center gap-4 max-lg:flex-col max-lg:items-start'>
             <div className='flex'>
-                <div className='bg-light-4 p-2 rounded-full group-hover:bg-dark-3 transition-all ease-in'>
+                <div className='bg-light-4 p-2 rounded-full group-hover:bg-dark-3 transition-all ease-in max-xs:hidden'>
                     <img 
                         src='/prize.png'
                         alt='contest-icon'
@@ -14,7 +14,12 @@ const ContestCard = ({ contestId, contestUrl, isUpcoming=false, isOngoing }) => 
                     />
                 </div>
                 <div className='my-auto ml-[-10px]'>
-                    <div className='py-2 pl-5 pr-7 bg-light-3 group-hover:text-white rounded-r-full group-hover:bg-dark-3 transition-all ease-in'>
+                    <div className='py-2 pl-5 pr-7 bg-light-3 group-hover:text-white rounded-r-full group-hover:bg-dark-3 transition-all ease-in max-xs:rounded-full flex gap-3 items-center'>
+                        <img 
+                            src='/prize.png'
+                            alt='contest-icon'
+                            className='w-10 h-10 object-contain rounded-full hidden max-xs:flex'
+                        />
                         <h2>Weekly Contest {contestId}</h2>
                     </div>
                 </div>
@@ -46,13 +51,14 @@ const ContestCard = ({ contestId, contestUrl, isUpcoming=false, isOngoing }) => 
             </div>
         </div>
         { isUpcoming && (
-            <div>
-                <button className='bg-light-4 group-hover:bg-dark-3 p-3 rounded-full transition-all ease-in'>
+            <div className=' max-xs:mt-3'>
+                <button className='max-xs:flex max-xs:gap-2 bg-light-4 group-hover:bg-dark-3 p-3 rounded-full transition-all ease-in'>
                     <img
                         src='/calendar.png'
                         alt='clock-icon'
                         className='w-5 h-5 object-contain'
                     />
+                    <p className='hidden max-xs:flex text-sm group-hover:text-white'>Add to Remainder</p>
                 </button>
             </div>
         )}

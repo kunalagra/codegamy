@@ -17,6 +17,10 @@ const Workspace = ({ problems }) => {
 				<ProblemDesc problems={problems} />
 				<Playground problems={problems} setSubmitted={setSubmitted} />
 			</Split>
+			<div className="md:hidden px-1">
+				<ProblemDesc problems={problems} />
+				<Playground problems={problems} setSubmitted={setSubmitted} />
+			</div>
 		</>
 	);
 }

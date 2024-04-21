@@ -147,8 +147,8 @@ export default function Room({ socket }) {
         <div className="roomSidebarUsersWrapper mb-3">
           <p>Connected Users:</p>
           <div className="roomSidebarUsers">
-            {fetchedUsers.map((each) => (
-              <div key={each} className="roomSidebarUsersEach">
+            {fetchedUsers.map((each, index) => (
+              <div key={index} className="roomSidebarUsersEach">
                 <div
                   className="roomSidebarUsersEachAvatar"
                   style={{ backgroundColor: `${generateColor(each)}` }}
@@ -184,7 +184,7 @@ export default function Room({ socket }) {
 
       <div className="w-full flex flex-col">
         <div className="flex gap-2 justify-between flex-wrap">
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <LanguagesDropdown
               value={language}
               onSelectChange={(e) => handleLanguageChange(e)}
@@ -238,7 +238,7 @@ export default function Room({ socket }) {
                   setCustomInput={setCustomInput}
                 />
               </div>
-              <OutputWindow outputDetails={outputDetails} />
+              <OutputWindow outputDetails={outputDetails} additionalStyles={'h-[250px]'} />
             </div>
           </div>
         </div>
