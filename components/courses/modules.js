@@ -22,7 +22,7 @@ const Modules = ({modules, setData}) => {
                     onClick={() => setOpen(true)}
                 />
             </div>
-            <div className={`w-full max-w-[350px] flex flex-col overflow-y-auto max-md:absolute max-md:bg-white z-10 ${!open && 'hidden'}`}>
+            <div className={`w-full max-w-[350px] flex flex-col overflow-y-auto max-md:absolute max-md:bg-white z-10 ${!open && 'max-md:hidden'}`}>
                 <div 
                     className="px-4 py-4 flex justify-between items-center cursor-pointer"
                     onClick={() => setOpen(false)}
