@@ -29,7 +29,7 @@
     "next-auth": "^4.24.7",
     "nodemon": "^3.1.4",
     "react": "^18",
-    "react-ace": "^11.0.1",
+    "react-ace": "^12.0.0",
     "react-chartjs-2": "^5.2.0",
     "react-confetti": "^6.1.0",
     "react-dom": "^18",
