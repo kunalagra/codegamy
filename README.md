@@ -94,8 +94,8 @@ Built at Quasar 2.0
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/SultanIndian007">
-            <img src="https://avatars.githubusercontent.com/u/96176706?v=4" width="100;" alt="SultanIndian007"/>
+        <a href="https://github.com/amant03">
+            <img src="https://avatars.githubusercontent.com/u/96176706?v=4" width="100;" alt="amant03"/>
             <br />
             <sub><b>Aman Tiwari</b></sub>
         </a>

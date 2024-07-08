@@ -2,10 +2,10 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import Link from 'next/link';
 
 const developers = [
-  { name: "Kunal Agrawal", designation: "Team Leader", role: "Backend Developer", linkedin: "https://www.linkedin.com/in/kunalragrawal", github: "https://github.com/kunalagra" },
-  { name: "Deexith Madas", designation: "Team Member", role: "Backend Developer", linkedin: "https://www.linkedin.com/in/deexith-madas", github: "https://github.com/MDeexith" },
-  { name: "Aman Tiwari", designation: "Team Member", role: "Frontend Developer", linkedin: "https://www.linkedin.com/in/aman-tiwari03", github: "https://github.com/SultanIndian007" },
-  { name: "Ganesh Utla", designation: "Team Member", role: "Frontend Developer", linkedin: "https://www.linkedin.com/in/ganesh-utla-888abc", github: "https://github.com/ganesh-utla" },
+  { name: "Kunal Agrawal", designation: "Team Leader", role: "Backend Developer", linkedin: "https://www.linkedin.com/in/kunalragrawal", github: "kunalagra" },
+  { name: "Deexith Madas", designation: "Team Member", role: "Backend Developer", linkedin: "https://www.linkedin.com/in/deexith-madas", github: "MDeexith" },
+  { name: "Aman Tiwari", designation: "Team Member", role: "Frontend Developer", linkedin: "https://www.linkedin.com/in/aman-tiwari03", github: "amant03" },
+  { name: "Ganesh Utla", designation: "Team Member", role: "Frontend Developer", linkedin: "https://www.linkedin.com/in/ganesh-utla-888abc", github: "ganesh-utla" },
 ];
 
 export default function Home() {
@@ -67,7 +67,7 @@ function DeveloperCard({ name, designation, role, linkedin, github }) {
   return (
     <div className='flex items-center w-full cursor-pointer group hover:ml-[15px] transition-all ease-in'>
       <div className='flex rounded-full w-28 h-28 max-sm:hidden p-2 bg-gray-200 z-10 group-hover:bg-gray-400 transition-all ease-in'>
-        <img src='profile.png' alt={name} className='w-full h-full object-contain' />
+        <img src={"https://avatars.githubusercontent.com/"+{github}} alt={name} className='w-full h-full object-contain' />
       </div>
       <div className='flex flex-grow flex-wrap gap-3 justify-between items-center bg-gray-100 py-4 px-12 ml-[-30px] rounded-r-full group-hover:bg-gray-900 transition-all ease-in'>
         <div className='flex flex-col'>
@@ -81,7 +81,7 @@ function DeveloperCard({ name, designation, role, linkedin, github }) {
           <Link href={linkedin} target="_blank" rel="noopener noreferrer" className="bg-gray-200 rounded-full p-3 group-hover:bg-gray-400 transition-all ease-in">
             <FaLinkedin className="w-8 h-8 max-sm:w-5 max-sm:h-5 text-blue-700 hover:text-blue-500" />
           </Link>
-          <Link href={github} target="_blank" rel="noopener noreferrer" className="bg-gray-200 rounded-full p-3 group-hover:bg-gray-400 transition-all ease-in">
+          <Link href={"https://github.com/"+{github}} target="_blank" rel="noopener noreferrer" className="bg-gray-200 rounded-full p-3 group-hover:bg-gray-400 transition-all ease-in">
             <FaGithub className="w-8 h-8 max-sm:w-5 max-sm:h-5 text-gray-700 hover:text-gray-500" />
           </Link>
         </div>

@@ -1,6 +1,6 @@
 {
-  "name": "quasar2_hack",
-  "version": "0.1.0",
+  "name": "codegamy",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
