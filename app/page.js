@@ -67,7 +67,7 @@ function DeveloperCard({ name, designation, role, linkedin, github }) {
   return (
     <div className='flex items-center w-full cursor-pointer group hover:ml-[15px] transition-all ease-in'>
       <div className='flex rounded-full w-28 h-28 max-sm:hidden p-2 bg-gray-200 z-10 group-hover:bg-gray-400 transition-all ease-in'>
-        <img src={`https://avatars.githubusercontent.com/${github}`} alt={name} className='w-full h-full object-contain' />
+        <img src={`https://avatars.githubusercontent.com/${github}`} alt={name} className='w-full h-full object-contain rounded-full' />
       </div>
       <div className='flex flex-grow flex-wrap gap-3 justify-between items-center bg-gray-100 py-4 px-12 ml-[-30px] rounded-r-full group-hover:bg-gray-900 transition-all ease-in'>
         <div className='flex flex-col'>
