@@ -26,7 +26,7 @@
     "js-cookie": "^3.0.5",
     "mongoose": "^8.7.0",
     "next": "^14.2.13",
-    "next-auth": "^4.24.7",
+    "next-auth": "^4.24.8",
     "nodemon": "^3.1.7",
     "react": "^18",
     "react-ace": "^12.0.0",
