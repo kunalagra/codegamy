@@ -25,7 +25,7 @@
     "fs": "^0.0.1-security",
     "js-cookie": "^3.0.5",
     "mongoose": "^8.7.0",
-    "next": "^14.2.13",
+    "next": "^14.2.14",
     "next-auth": "^4.24.8",
     "nodemon": "^3.1.7",
     "react": "^18",
