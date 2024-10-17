@@ -17,7 +17,7 @@
     "@jitsi/react-sdk": "^1.4.0",
     "@uiw/codemirror-theme-eclipse": "^4.23.4",
     "@uiw/codemirror-theme-vscode": "^4.23.5",
-    "@uiw/react-codemirror": "^4.23.2",
+    "@uiw/react-codemirror": "^4.23.5",
     "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
     "chart.js": "^4.4.4",
