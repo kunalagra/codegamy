@@ -20,7 +20,7 @@
     "@uiw/react-codemirror": "^4.23.6",
     "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
-    "chart.js": "^4.4.4",
+    "chart.js": "^4.4.6",
     "express": "^4.21.0",
     "fs": "^0.0.1-security",
     "js-cookie": "^3.0.5",
