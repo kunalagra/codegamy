@@ -18,7 +18,7 @@
     "@uiw/codemirror-theme-eclipse": "^4.23.8",
     "@uiw/codemirror-theme-vscode": "^4.23.8",
     "@uiw/react-codemirror": "^4.23.8",
-    "axios": "^1.7.9",
+    "axios": "^1.8.1",
     "bcrypt": "^5.1.1",
     "chart.js": "^4.4.8",
     "express": "^4.21.2",
