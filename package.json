@@ -24,7 +24,7 @@
     "express": "^5.1.0",
     "fs": "^0.0.1-security",
     "js-cookie": "^3.0.5",
-    "mongoose": "^8.16.1",
+    "mongoose": "^8.16.2",
     "next": "^15.3.5",
     "next-auth": "^4.24.11",
     "nodemon": "^3.1.10",
