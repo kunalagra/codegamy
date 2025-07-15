@@ -16,7 +16,7 @@
     "@codemirror/lang-python": "^6.2.1",
     "@jitsi/react-sdk": "^1.4.4",
     "@uiw/codemirror-theme-eclipse": "^4.24.0",
-    "@uiw/codemirror-theme-vscode": "^4.24.0",
+    "@uiw/codemirror-theme-vscode": "^4.24.1",
     "@uiw/react-codemirror": "^4.24.0",
     "axios": "^1.10.0",
     "bcrypt": "^6.0.0",
