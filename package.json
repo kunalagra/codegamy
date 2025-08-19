@@ -38,7 +38,7 @@
     "react-markdown": "^10.1.0",
     "react-media-recorder-2": "^1.6.23",
     "react-multi-carousel": "^2.8.6",
-    "react-router-dom": "^7.8.0",
+    "react-router-dom": "^7.8.1",
     "react-select": "^5.10.2",
     "react-split": "^2.0.14",
     "react-toastify": "^11.0.5",
