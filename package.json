@@ -54,7 +54,7 @@
     "socket.io-client": "^4.8.1"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.22",
+    "autoprefixer": "^10.4.23",
     "eslint": "9.39.2",
     "eslint-config-next": "16.0.10",
     "postcss": "^8",
