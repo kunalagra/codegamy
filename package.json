@@ -51,7 +51,7 @@
     "rehype-stringify": "^10.0.1",
     "remark-gfm": "^4.0.1",
     "socket.io": "^4.8.1",
-    "socket.io-client": "^4.8.1"
+    "socket.io-client": "^4.8.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.23",
