@@ -23,7 +23,7 @@
     "chart.js": "^4.5.1",
     "express": "^5.2.1",
     "fs": "^0.0.1-security",
-    "js-cookie": "^3.0.7",
+    "js-cookie": "^3.0.8",
     "mongoose": "^9.6.2",
     "next": "^16.2.6",
     "next-auth": "^4.24.14",
