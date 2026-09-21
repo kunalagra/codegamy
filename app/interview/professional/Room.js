@@ -90,11 +90,9 @@ export default function Room({ socket }) {
     setIsCodeRunning(true);
     const options = {
       method: "POST",
-      url: "https://jdoodle2.p.rapidapi.com/v1",
+      url: "/api/submitCode",
       headers: {
         "content-type": "application/json",
-        "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY,
-        "X-RapidAPI-Host": process.env.NEXT_PUBLIC_RAPID_API_HOST,
       },
       data: {
         language: language.value,
