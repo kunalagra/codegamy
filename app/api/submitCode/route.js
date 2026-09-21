@@ -13,7 +13,20 @@ export async function POST(req) {
     const userID = session?.user?._id;
     if (userID){
 
-        const {code,problem,language,contest} = await req.json()
+        const {code,problem,language,contest,input} = await req.json()
+        if (!problem) {
+            const runRes = await fetch('https://jdoodle2.p.rapidapi.com/v1',{
+                method: 'POST',
+                headers: {
+                    "content-type": "application/json",
+                    "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY,
+                    "X-RapidAPI-Host": process.env.NEXT_PUBLIC_RAPID_API_HOST,
+                },
+                body: JSON.stringify({ language, version: "latest", code, input }),
+            })
+            const runData = await runRes.json()
+            return new Response(JSON.stringify(runData),{status: 200})
+        }
         // console.log(code,problem,language,contest)
         const user = await User.findById(userID)
         const userdata = await UserInfo.findById(user.userInfo).populate('solved')
